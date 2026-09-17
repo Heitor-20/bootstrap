@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Midgard | Crônicas da Guerra</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--obsidian: #0b0d0d;
+			--stone: #171b1b;
+			--stone-light: #27302f;
+				--war-red: #a52c28;
+				--war-red-dark: #631b1d;
+				--ember: #d95d45;
+				--gold: #c39a56;
+				--ice: #c9d5d0;
+				--text-soft: #9ca9a5;
+			}
+
+			body {
+				min-height: 100vh;
+				color: #f4f0e8;
+				background-color: var(--obsidian);
+				background-image: radial-gradient(circle at 80% 8%, rgba(165,44,40,.18), transparent 28%), linear-gradient(135deg, rgba(201,213,208,.035) 1px, transparent 1px), linear-gradient(45deg, rgba(201,213,208,.02) 1px, transparent 1px);
+				background-size: auto, 42px 42px, 42px 42px;
+				font-family: 'Inter', sans-serif;
+				letter-spacing: .01em;
+		}
+
+		.eyebrow {
+				color: var(--ember);
+			color: var(--ember);
+			font-size: .72rem;
+			letter-spacing: .18em;
+			text-transform: uppercase;
+		}
+
+		.jumbotron {
+			position: relative;
+				min-height: 360px;
+				border: 1px solid #4a3930;
+				border-left: 6px solid var(--war-red);
+				background: linear-gradient(115deg, rgba(55, 25, 24, .96), rgba(18, 23, 23, .98) 67%), url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=85');
+				background-position: center;
+				background-size: cover;
+				box-shadow: 0 22px 60px rgba(0,0,0,.45);
+		}
+
+		.jumbotron::after {
+				content: 'ᚠ ᚱ ᛟ ᛏ ᛁ ᚾ';
+			position: absolute;
+			right: 3%;
+			bottom: 5%;
+				color: rgba(217,93,69,.2);
+				font: 700 3rem/1 'Cinzel', serif;
+				letter-spacing: .8rem;
+				transform: rotate(-12deg);
+		}
+
+		h1, h2, h3 { font-family: 'Cinzel', serif; font-weight: 700; text-transform: uppercase; }
+		h1 { max-width: 680px; font-size: clamp(2.7rem, 7vw, 5.8rem); line-height: .9; }
+		h2 { font-size: 1.75rem; }
+			.lead { max-width: 620px; color: var(--ice); font-size: 1.12rem; }
+		.lead { max-width: 620px; color: var(--ice); font-size: 1.12rem; }
+
+		.btn-redstone {
+				color: #fff;
+				border: 1px solid #e0785e;
+				border-radius: 2px;
+				background: var(--war-red);
+				box-shadow: 0 4px 0 var(--war-red-dark);
+				font-family: 'Cinzel', serif;
+			font-size: .75rem;
+			letter-spacing: .08em;
+			text-transform: uppercase;
+		}
+
+		.btn-redstone:hover { color: #fff; background: var(--ember); transform: translateY(2px); box-shadow: 0 2px 0 var(--war-red-dark); }
+
+		.panel {
+			height: 100%;
+				border: 1px solid #36403e;
+				border-top: 3px solid var(--war-red);
+				background: rgba(23, 27, 27, .94);
+		}
+
+			.panel-accent { border-top-color: var(--gold); }
+		.panel p { color: var(--text-soft); }
+
+		.signal-line {
+				height: 8px;
+				background: #30191a;
+			margin: 1.25rem 0;
+		}
+		.signal-line span { display: block; width: 76%; height: 100%; background: var(--war-red); box-shadow: 0 0 14px rgba(165, 44, 40, .8); }
+			.stat-value { color: var(--ember); font-size: 1.45rem; }
+		.signal-label { color: var(--text-soft); font-size: .68rem; text-transform: uppercase; }
+			.fact-list li::marker { color: var(--ember); }
+		.fact-list { padding-left: 1.1rem; color: var(--text-soft); }
+		.fact-list li { margin-bottom: .65rem; }
+
+		.mini-card { height: 100%; padding: 1.25rem 1rem; border: 1px solid #36403e; background: var(--stone); }
+		.mini-card img { width: 100%; height: 130px; object-fit: cover; margin-bottom: 1rem; filter: saturate(.7) contrast(1.1); }
+			.mini-card strong { display: block; margin-bottom: .35rem; color: var(--gold); font-family: 'Cinzel', serif; font-size: 1.9rem; line-height: 1; }
+		.mini-card-content { padding: 0 .15rem; }
+			.navbar-redstone { border-bottom: 1px solid #512421; background: rgba(11, 13, 13, .97); }
+			.navbar-brand { color: var(--ember); font-family: 'Cinzel', serif; font-size: .9rem; font-weight: 700; letter-spacing: .08em; }
+
+			.navbar-toggler { border-color: var(--war-red); }
+		.navbar-brand:hover, .navbar-redstone .nav-link:hover { color: #fff; }
+		.navbar-redstone .nav-link { color: var(--text-soft); font-size: .95rem; text-transform: uppercase; }
+			.led-section { padding: 1.5rem; border: 1px solid #36403e; border-left: 3px solid var(--gold); background: rgba(23, 27, 27, .94); }
+		.navbar-toggler-icon { filter: invert(1); }
+
+			.led-node { display: flex; width: 58px; height: 58px; align-items: center; justify-content: center; border: 3px solid #7f2a24; border-radius: 50%; background: var(--war-red); box-shadow: 0 0 22px rgba(165, 44, 40, .8); color: #fff; font-family: 'Cinzel', serif; font-size: .72rem; font-weight: 700; }
+		.led-board { display: flex; align-items: center; justify-content: center; gap: 1.25rem; min-height: 155px; padding: 1rem; background: #171b1d; }
+			.led-wire { width: 42px; height: 5px; background: var(--ember); box-shadow: 0 0 10px var(--war-red); }
+		.led-steps { color: var(--text-soft); }
+			.led-steps li::marker { color: var(--gold); font-family: 'Cinzel', serif; }
+
+		footer { color: #778080; font-size: .8rem; letter-spacing: .08em; }
+
+		@media (max-width: 575.98px) {
+			.jumbotron { min-height: 430px; padding: 2rem 1.35rem; }
+			h1 { font-size: clamp(2.35rem, 13vw, 4rem); }
+			.jumbotron::after { right: 1rem; bottom: 1.5rem; font-size: 1.8rem; letter-spacing: .35rem; }
+			.led-board { gap: .45rem; padding: .75rem .35rem; }
+			.led-node { width: 48px; height: 48px; flex: 0 0 48px; font-size: .62rem; }
+			.led-wire { width: 18px; flex: 0 0 18px; }
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-redstone sticky-top" aria-label="Navegação principal">
+		<div class="container">
+			<a class="navbar-brand" href="#inicio">MIDGARD / ᛟ</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="menuPrincipal">
+				<ul class="navbar-nav ms-auto gap-md-3">
+					<li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+					<li class="nav-item"><a class="nav-link" href="lenda.html">A lenda</a></li>
+					<li class="nav-item"><a class="nav-link" href="armas.html">As armas</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<main class="container py-4 py-md-5">
+		<!-- Linha 1: destaque em largura total -->
+		<section class="row mb-4" id="inicio">
+			<div class="col-12">
+				<div class="jumbotron">
+					<div class="eyebrow mb-3">Saga de Midgard / Crônica 001</div>
+					<h1 class="mb-3">O destino é uma lâmina que forjamos</h1>
+					<p class="lead mb-4">Entre deuses, monstros e mundos congelados, a jornada de Kratos e Atreus é escrita com cinzas, aço e escolhas.</p>
+					<a class="btn btn-redstone px-4 py-3" href="#fundamentos">Ler a profecia</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="row mb-4" id="leds">
+			<div class="col-12">
+				<article class="led-section">
+					<div class="row g-4 align-items-center">
+						<div class="col-12 col-lg-7">
+							<div class="eyebrow mb-2">03 / Arsenal lendário</div>
+							<h2>As armas que desafiam os deuses</h2>
+							<p class="mb-0">O Leviatã congela o impossível e as Lâminas do Caos carregam o fogo do passado. Cada arma revela uma parte da história de Kratos.</p>
+						</div>
+						<div class="col-12 col-lg-5">
+							<div class="led-board" aria-label="Diagrama simbólico das armas de Kratos">
+								<div class="led-node">ᛚ</div><div class="led-wire"></div><div class="led-node">ᚲ</div><div class="led-wire"></div><div class="led-node">ᚨ</div>
+							</div>
+						</div>
+					</div>
+					<hr class="border-secondary my-4">
+					<div class="row">
+						<div class="col-12 col-md-6">
+							<h3>O caminho do guerreiro</h3>
+							<ol class="led-steps mb-md-0">
+								<li>Aprenda com o passado, sem ser definido por ele.</li>
+								<li>Proteja Atreus enquanto atravessa os reinos.</li>
+								<li>Enfrente o destino com disciplina e aço.</li>
+							</ol>
+						</div>
+						<div class="col-12 col-md-6">
+							<h3>O legado</h3>
+							<p class="mb-0">A força de um guerreiro não está apenas na fúria. Está na escolha de quebrar o ciclo e ensinar um novo caminho.</p>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<!-- Linha 2: duas colunas de tamanho 6 -->
+		<section class="row g-4 mb-4" id="fundamentos">
+			<div class="col-12 col-md-6">
+				<article class="panel">
+					<div class="eyebrow mb-2">01 / A lenda</div>
+					<h2>Um deus. Um pai. Um destino.</h2>
+					<p>Depois de deixar a Grécia em ruínas, Kratos encontra nos reinos nórdicos uma chance de viver em silêncio e criar Atreus.</p>
+					<p>Mas a morte de Faye desperta uma promessa: espalhar suas cinzas do pico mais alto dos nove reinos.</p>
+					<div class="signal-line" aria-label="Fúria de Kratos em 76 por cento"><span></span></div>
+					<div class="d-flex justify-content-between signal-label"><span>Fúria controlada</span><span>76%</span></div>
+				</article>
+			</div>
+			<div class="col-12 col-md-6">
+				<article class="panel panel-accent">
+					<div class="eyebrow mb-2">02 / Os nove reinos</div>
+					<h2>O mapa da jornada</h2>
+					<p>Cada reino guarda uma ameaça e uma lição. A ponte entre eles é feita de coragem, memória e confiança.</p>
+					<ul class="fact-list mb-0">
+						<li>Midgard: a terra dos homens e dos segredos.</li>
+						<li>Alfheim: luz, guerra e escolhas difíceis.</li>
+						<li>Helheim: onde até os mortos se lembram.</li>
+					</ul>
+				</article>
+			</div>
+		</section>
+
+		<!-- Linha 3: três colunas de tamanho 4 -->
+		<section class="row g-3 mb-5">
+			<div class="col-12 col-md-4">
+				<article class="mini-card">
+					<img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=80" alt="Formação rochosa iluminada em tons avermelhados">
+					<div class="mini-card-content"><strong>09</strong><span>reinos conectados pela jornada</span></div>
+				</article>
+			</div>
+			<div class="col-12 col-md-4">
+				<article class="mini-card">
+					<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=900&q=80" alt="Metal e luzes em uma paisagem escura">
+					<div class="mini-card-content"><strong>02</strong><span>armas lendárias no arsenal</span></div>
+				</article>
+			</div>
+			<div class="col-12 col-md-4">
+				<article class="mini-card">
+					<img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=900&q=80" alt="Paisagem fria e montanhosa ao entardecer">
+					<div class="mini-card-content"><strong>∞</strong><span>caminhos para mudar o destino</span></div>
+				</article>
+			</div>
+		</section>
+
+		<footer class="text-center mono">MIDGARD <span class="text-danger">/</span> a jornada continua</footer>
+	</main>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
