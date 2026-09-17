@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>A Lenda | Midgard</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root { --obsidian: #0b0d0d; --stone: #171b1b; --war-red: #a52c28; --war-red-dark: #631b1d; --ember: #d95d45; --gold: #c39a56; --ice: #c9d5d0; --text-soft: #9ca9a5; }
+		* { box-sizing: border-box; }
+		body { min-height: 100vh; color: #f4f0e8; background: var(--obsidian); background-image: radial-gradient(circle at 85% 12%, rgba(165,44,40,.18), transparent 30%), linear-gradient(135deg, rgba(201,213,208,.035) 1px, transparent 1px), linear-gradient(45deg, rgba(201,213,208,.02) 1px, transparent 1px); background-size: auto, 42px 42px, 42px 42px; font-family: 'Inter', sans-serif; }
+		.container { max-width: 1120px; }
+		.navbar-redstone { border-bottom: 1px solid #512421; background: rgba(11,13,13,.97); }
+		.navbar-brand, h1, h2, h3 { font-family: 'Cinzel', serif; }
+		.navbar-brand { color: var(--ember); font-size: .9rem; font-weight: 700; letter-spacing: .08em; }
+		.navbar-brand:hover, .nav-link:hover, .nav-link.active { color: #fff; }
+		.nav-link { color: var(--text-soft); font-size: .88rem; text-transform: uppercase; }
+		.navbar-toggler { border-color: var(--war-red); }
+		.navbar-toggler-icon { filter: invert(1); }
+		.eyebrow { color: var(--ember); font-family: 'Cinzel', serif; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; }
+		h1, h2, h3 { font-weight: 700; text-transform: uppercase; }
+		h1 { max-width: 760px; font-size: clamp(2.7rem, 7vw, 5.8rem); line-height: .95; }
+		h2 { font-size: 1.65rem; }
+		.lead, p { color: var(--text-soft); line-height: 1.75; }
+		.hero { position: relative; overflow: hidden; min-height: 360px; padding: clamp(2rem, 7vw, 5rem); border-left: 6px solid var(--war-red); background: linear-gradient(115deg, rgba(55,25,24,.96), rgba(18,23,23,.96) 70%), url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=85') center/cover; box-shadow: 0 22px 60px rgba(0,0,0,.4); }
+		.hero::after { content: 'ᚲ ᚱ ᛟ ᚾ ᛟ ᛋ'; position: absolute; right: 4%; bottom: 7%; color: rgba(217,93,69,.2); font: 700 2.5rem/1 'Cinzel', serif; letter-spacing: .65rem; transform: rotate(-10deg); }
+		.panel { height: 100%; padding: 1.5rem; border: 1px solid #36403e; border-top: 3px solid var(--war-red); background: rgba(23,27,27,.94); }
+		.panel.gold { border-top-color: var(--gold); }
+		.timeline { display: grid; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+		.timeline li { position: relative; padding: 1.1rem 1.2rem 1.1rem 3.2rem; border-left: 1px solid #63302d; background: rgba(11,13,13,.5); }
+		.timeline li::before { content: 'ᛟ'; position: absolute; left: -1rem; top: 1rem; display: grid; width: 2rem; height: 2rem; place-items: center; border: 1px solid var(--ember); color: var(--gold); background: var(--obsidian); font-family: 'Cinzel', serif; }
+		.timeline strong { display: block; margin-bottom: .3rem; color: var(--ice); font-family: 'Cinzel', serif; text-transform: uppercase; }
+		footer { color: #778080; font-size: .8rem; letter-spacing: .08em; }
+		@media (max-width: 575.98px) { .hero { min-height: 430px; padding: 2rem 1.35rem; } .hero::after { font-size: 1.6rem; letter-spacing: .3rem; } }
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-redstone sticky-top" aria-label="Navegação principal">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">MIDGARD / ᛟ</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu"><span class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="menuPrincipal"><ul class="navbar-nav ms-auto gap-md-3">
+				<li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+				<li class="nav-item"><a class="nav-link active" aria-current="page" href="lenda.html">A lenda</a></li>
+				<li class="nav-item"><a class="nav-link" href="armas.html">As armas</a></li>
+			</ul></div>
+		</div>
+	</nav>
+	<main class="container py-4 py-md-5">
+		<section class="hero mb-4"><div class="eyebrow mb-3">Crônica 02 / A lenda</div><h1 class="mb-3">Um deus. Um pai. Um novo caminho.</h1><p class="lead mb-0" style="max-width: 650px;">A história de Kratos e Atreus começa com uma despedida e cresce através de nove reinos, escolhas difíceis e uma promessa que não pode ser quebrada.</p></section>
+		<section class="row g-4 mb-4">
+			<div class="col-12 col-lg-7"><article class="panel"><div class="eyebrow mb-2">A jornada</div><h2>O passado nunca fica enterrado</h2><p>Kratos tentou deixar para trás a fúria que o consumiu. Em Midgard, ao lado de Atreus, ele aprende que proteger alguém exige mais do que força: exige verdade.</p><p class="mb-0">A viagem até o pico mais alto dos reinos é também uma travessia interior. Pai e filho descobrem que o destino pode ser confrontado quando os dois escolhem quem querem se tornar.</p></article></div>
+			<div class="col-12 col-lg-5"><article class="panel gold"><div class="eyebrow mb-2">Palavras de um pai</div><h2>“Menos conversa. Mais ação.”</h2><p class="mb-0">A disciplina de Kratos é uma armadura. Mas, ao longo da jornada, Atreus mostra que ouvir, confiar e sentir também são formas de coragem.</p></article></div>
+		</section>
+		<section class="panel mb-5"><div class="eyebrow mb-2">Capítulos da saga</div><h2 class="mb-4">Marcas deixadas na neve</h2><ol class="timeline"><li><strong>Uma promessa</strong><span class="text-secondary">As cinzas de Faye apontam para uma missão maior do que qualquer batalha.</span></li><li><strong>Um nome escondido</strong><span class="text-secondary">Atreus precisa entender sua origem para escolher seu futuro.</span></li><li><strong>Um ciclo quebrado</strong><span class="text-secondary">O legado de Kratos muda quando ele decide não repetir os erros dos antigos deuses.</span></li></ol></section>
+		<footer class="text-center">MIDGARD <span class="text-danger">/</span> a jornada continua</footer>
+	</main>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
